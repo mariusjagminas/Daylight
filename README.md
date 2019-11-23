@@ -20,6 +20,10 @@ The user types in the search box a city or country name, and will get current su
 
 - [Bulma](https://bulma.io/) CSS framework.
 
+## Will you try to implement any stretch features?
+
+- I'll use [Webpack](https://webpack.js.org/) to bundle modules.
+
 ## What will be your process?
 
 - I will submit commit when a feature is added, or a task is accomplished.
