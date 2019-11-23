@@ -1,4 +1,11 @@
 import "../sass/styles.scss";
-import { toggleMobileMenu } from "./toggleMobileMenu";
+import { handleInputSubmit } from "./handleInputSubmit";
 
-toggleMobileMenu();
+const preloader = document.querySelector(".preloader");
+const infoContainer = document.querySelector("#info-container");
+document
+  .querySelector("#input")
+  .addEventListener(
+    "submit",
+    handleInputSubmit.bind(null, infoContainer, preloader)
+  );
