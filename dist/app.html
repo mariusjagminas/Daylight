@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Daylight</title>
+  </head>
+  <body class="has-navbar-fixed-top has-background-light">
+    <!-- Header starts here -->
+    <header>
+      <nav
+        class="navbar is-primary is-fixed-top"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="container">
+          <div class="navbar-brand">
+            <a href="./index.html" class="navbar-item is-size-4 ">
+              Daylight
+            </a>
+            <a
+              role="button"
+              class="navbar-burger"
+              data-target="navMenu"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu" id="navMenu">
+            <div class="navbar-end">
+              <a href="./index.html" class="navbar-item is-size-5">About</a>
+              <a href="./app.html" class="navbar-item is-size-5 is-active">
+                App
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Section starts here -->
+    <section class="section ">
+      <div class="container has-text-centered ">
+        <!-- Input starts here -->
+        <div class="columns is-centered is-mobile">
+          <div class="column is-narrow has-background-light">
+            <div class="field has-addons ">
+              <div class="control">
+                <input
+                  class="input "
+                  type="text"
+                  placeholder="Enter City or Country"
+                />
+              </div>
+              <div class="control">
+                <a class="button is-primary ">
+                  Search
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Input ends here -->
+        <h2 class="title is-size-3 test" style="margin-top: 2rem;">
+          New York City, US
+        </h2>
+        <p class="title is-size-5">22 November 2019</p>
+        <!-- Sunrise Sunset Times starts here -->
+        <!-- Main container -->
+        <div class="columns is-mobile is-centered" style="margin-top: 3rem">
+          <div style="width: 100%; max-width: 450px; margin: 0 40px;">
+            <!--  -->
+            <div class="columns ">
+              <!-- First Card starts here -->
+              <div class="column">
+                <div class="card ">
+                  <div
+                    class="card-image"
+                    style="padding: 1.2rem 1.2rem 0 1.2rem"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      focusable="false"
+                      width="70%"
+                      height="70%"
+                      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        d="M1024 759q-97 62-96 137q1 36 4 55q92 33 92 73H0q0-40 93-74q3-27 3-54q-2-77-96-137q255-11 137-237q227 117 238-138q60 94 137 96q75 2 137-96q11 255 238 138q-118 226 137 237zM512 576q-87 0-161 43T234.5 735.5T192 896q0 12 1 28q30-6 64-11q-1-15-1-17q0-106 75-181t181-75t181 75t75 181q0 3-1 17q34 5 64 11q1-17 1-28q0-87-42.5-160.5T673 619t-161-43zm64-384v96q0 13-9.5 22.5T544 320h-64q-13 0-22.5-9.5T448 288v-96H335q-25-22-8-37L489 9q9-9 23-9t24 9l162 146q16 15-9 37H576z"
+                        fill="#F67A05"
+                      />
+                    </svg>
+                  </div>
+                  <div class="card-content">
+                    <div class="content">
+                      <p class="title  is-3">
+                        Sunrise
+                      </p>
+                    </div>
+                    <div class="content">
+                      <p class="title is-2">
+                        08:45
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- First Card ends here -->
+              <!-- Second Card starts here -->
+              <div class="column">
+                <div class="card ">
+                  <div
+                    class="card-image"
+                    style="padding: 1.2rem 1.2rem 0 1.2rem"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true"
+                      focusable="false"
+                      width="70%"
+                      height="70%"
+                      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 1024 1024"
+                    >
+                      <path
+                        d="M1024 759q-97 62-96 137q1 36 4 55q92 33 92 73H0q0-40 93-74q3-28 3-54q-2-77-96-137q255-11 137-237q227 117 238-138q60 94 137 96q75 2 137-96q11 255 238 138q-118 226 137 237zM512 576q-87 0-161 43T234.5 735.5T192 896q0 12 1 28q30-6 64-11q-1-15-1-17q0-106 75-181t181-75t181 75t75 181q0 2-1 17q34 5 64 11q1-17 1-28q0-87-43-160.5T672.5 619T512 576zm24-265q-10 9-24 9t-23-9L327 165q-17-15 8-37h113V32q0-13 9.5-22.5T480 0h64q13 0 22.5 9.5T576 32v96h113q25 22 9 37z"
+                        fill="#F67A05"
+                      />
+                    </svg>
+                  </div>
+                  <div class="card-content">
+                    <div class="content">
+                      <p class="title  is-3">
+                        Sunset
+                      </p>
+                    </div>
+                    <div class="content">
+                      <p class="title is-2">
+                        20:45
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Second Card ends here -->
+            </div>
+          </div>
+        </div>
+        <!-- Sunrise Sunset Times ends here -->
+        <div style="margin-top: 3rem;">
+          <p class="title is-size-3 ">Day lenght is 12:10</p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer has-background-black-ter">
+      <div class=" level-item content has-text-centered has-text-white">
+        <p>
+          Made by
+          <a href="https://github.com/mariusjagminas">Marius Jagminas</a>
+          <br />
+          for
+          <br />
+          <a
+            href="https://github.com/CodingGarden/seedling-school-01-frontend-project"
+          >
+            Seedling School 01 Front End Project
+          </a>
+          by
+          <a href="https://coding.garden/" class="is-link">
+            Coding Garden with CJ
+          </a>
+        </p>
+      </div>
+    </footer>
+    <script src="bundle.js"></script>
+  </body>
+</html>
