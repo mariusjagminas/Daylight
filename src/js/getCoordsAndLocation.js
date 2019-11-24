@@ -13,7 +13,7 @@ export const getCoordsAndLocation = async query => {
       return {
         lat: lat,
         lng: lng,
-        countryName: toponymName,
+        locationName: toponymName,
         countryCode: countryCode || "",
         isLocationFound: true,
         error: false

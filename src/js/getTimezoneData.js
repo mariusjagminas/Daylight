@@ -4,10 +4,10 @@ import { getSunriseSunsetTimes } from "./getSunriseSunsetTimes";
 export const getTimezoneData = async query => {
   try {
     const coordsAndLocation = await getCoordsAndLocation(query);
-    const { lat, lng, countryName, countryCode } = coordsAndLocation;
+    const { lat, lng, locationName, countryCode } = coordsAndLocation;
     const { sunrise, sunset } = await getSunriseSunsetTimes(lat, lng);
     return {
-      countryName,
+      locationName,
       countryCode,
       sunrise,
       sunset

@@ -1,11 +1,13 @@
 import { getTimezoneData } from "./getTimezoneData";
+import { displayTimezoneData } from "./displayTimezoneData";
+import { showComponent, hideComponent } from "./toggleComponent";
 
-export const handleInputSubmit = (infoContainer, preloader, e) => {
+export const handleInputSubmit = (nodes, e) => {
   e.preventDefault();
-  preloader.classList.add("preloader-is-active");
-  infoContainer.classList.add("element-is-hidden");
+  hideComponent(nodes.infoContainer);
+  showComponent(nodes.preloader);
   getTimezoneData(e.target[0].value)
-    .then(res => console.log(res))
+    .then(timezoneData => displayTimezoneData(timezoneData, nodes))
     .catch(err => console.log("ERROR_getTimezoneData", err));
   e.target[0].value = "";
 };

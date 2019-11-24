@@ -8,7 +8,7 @@
     <title>Daylight</title>
   </head>
   <body class="has-navbar-fixed-top has-background-light">
-    <div class="preloader">
+    <div class="preloader component-is-invisible">
       <img src="./assets/preloader.gif" />
     </div>
     <!-- Header starts here -->
@@ -70,11 +70,15 @@
           </div>
         </div>
         <!-- Input ends here -->
-        <div class="element-is-hidden" id="info-container">
-          <h2 class="title is-size-3 test" style="margin-top: 2rem;">
+        <div class="component-is-invisible" id="info-container">
+          <h2
+            class="title is-size-3 test"
+            style="margin-top: 2rem;"
+            id="location-name"
+          >
             New York City, US
           </h2>
-          <p class="title is-size-5">22 November 2019</p>
+          <p class="title is-size-5" id="current-date">22 November 2019</p>
           <!-- Sunrise Sunset Times starts here -->
           <!-- Main container -->
           <div class="columns is-mobile is-centered" style="margin-top: 3rem">
@@ -112,7 +116,7 @@
                         </p>
                       </div>
                       <div class="content">
-                        <p class="title is-2">
+                        <p class="title is-2" id="sunrise-time">
                           08:45
                         </p>
                       </div>
@@ -151,7 +155,7 @@
                         </p>
                       </div>
                       <div class="content">
-                        <p class="title is-2">
+                        <p class="title is-2" id="sunset-time">
                           20:45
                         </p>
                       </div>
@@ -160,11 +164,13 @@
                 </div>
                 <!-- Second Card ends here -->
               </div>
+              <div style="margin: 3rem 0;">
+                <p class="title is-size-3" id="day-lenght">
+                  Day lenght is 12:10
+                </p>
+              </div>
             </div>
-          </div>
-          <!-- Sunrise Sunset Times ends here -->
-          <div style="margin-top: 3rem;">
-            <p class="title is-size-3 ">Day lenght is 12:10</p>
+            <!-- Sunrise Sunset Times ends here -->
           </div>
         </div>
       </div>
