@@ -3,3 +3,7 @@ node_modules
 .env
 
 user.js
+
+dist/bundle.js
+
+dist/styles.css
