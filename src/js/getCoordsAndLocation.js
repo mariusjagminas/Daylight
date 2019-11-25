@@ -1,13 +1,11 @@
-import { user } from "./user";
-
 export const getCoordsAndLocation = async query => {
   const encodedQuery = encodeURI(query);
+
   try {
     const queryResponse = await fetch(
-      `http://api.geonames.org/search?q=${encodedQuery}&maxRows=1&username=${user}&type=json`
+      `http://api.geonames.org/search?q=${encodedQuery}&maxRows=1&username=${process.env.USER}&type=json`
     );
     const geoData = await queryResponse.json();
-    console.log(geoData);
 
     if (geoData.totalResultsCount > 0) {
       const { lat, lng, toponymName, countryCode } = geoData.geonames[0];
