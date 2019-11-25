@@ -3,7 +3,7 @@ export const getCoordsAndLocation = async query => {
 
   try {
     const queryResponse = await fetch(
-      `http://api.geonames.org/search?q=${encodedQuery}&maxRows=1&username=${process.env.USER}&type=json`
+      `https://secure.geonames.org/search?q=${encodedQuery}&maxRows=1&username=${process.env.USER}&type=json`
     );
     const geoData = await queryResponse.json();
 

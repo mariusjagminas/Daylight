@@ -1,7 +1,7 @@
 export const getSunriseSunsetTimes = async (lat, lng) => {
   try {
     const res = await fetch(
-      `http://api.geonames.org/timezoneJSON?lat=${lat}&lng=${lng}&username=${process.env.USER}`
+      `https://secure.geonames.org/timezoneJSON?lat=${lat}&lng=${lng}&username=${process.env.USER}`
     );
     const { sunrise, sunset } = await res.json();
     return { sunrise, sunset };
