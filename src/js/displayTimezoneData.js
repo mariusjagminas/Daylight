@@ -1,18 +1,18 @@
 import moment from "moment";
 import { showComponent, hideComponent } from "./toggleComponent";
+import nodes from "./nodes";
 
-export const displayTimezoneData = (
-  timezoneData,
-  {
-    preloader,
-    infoContainer,
-    locationName,
-    currentDate,
-    sunriseTime,
-    sunsetTime,
-    dayLenght
-  }
-) => {
+const {
+  preloader,
+  infoContainer,
+  locationName,
+  currentDate,
+  sunriseTime,
+  sunsetTime,
+  dayLenght
+} = nodes;
+
+export const displayTimezoneData = timezoneData => {
   const dayLenghtRaw =
     moment(timezoneData.sunset) - moment(timezoneData.sunrise);
   const dayLenghtStr = `Day lenght ${moment(dayLenghtRaw).format("HH:mm")}`;
