@@ -1,7 +1,12 @@
 import { showComponent, hideComponent } from "./toggleComponent";
+import nodes from "./nodes";
+
+const { errorMessage, infoContainer, preloader } = nodes;
 
 export const showErrorMessage = msg => {
-  const el = document.querySelector("#error-message");
-  el.innrtText = msg;
-  showComponent(el);
+  hideComponent(errorMessage);
+  hideComponent(infoContainer);
+  hideComponent(preloader);
+  errorMessage.innrtText = msg;
+  showComponent(errorMessage);
 };

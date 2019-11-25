@@ -9,7 +9,8 @@ const {
   currentDate,
   sunriseTime,
   sunsetTime,
-  dayLenght
+  dayLenght,
+  errorMessage
 } = nodes;
 
 export const displayTimezoneData = timezoneData => {
@@ -23,5 +24,6 @@ export const displayTimezoneData = timezoneData => {
   sunsetTime.innerText = moment(timezoneData.sunset).format("HH:mm");
   dayLenght.innerText = dayLenghtStr;
   hideComponent(preloader);
+  hideComponent(errorMessage);
   showComponent(infoContainer);
 };

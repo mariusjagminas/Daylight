@@ -6,7 +6,8 @@ const nodes = {
   sunriseTime: document.querySelector("#sunrise-time"),
   sunsetTime: document.querySelector("#sunset-time"),
   dayLenght: document.querySelector("#day-lenght"),
-  input: document.querySelector("#input")
+  input: document.querySelector("#input"),
+  errorMessage: document.querySelector("#error-message")
 };
 
 export default nodes;

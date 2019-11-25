@@ -7,6 +7,7 @@ export const getCoordsAndLocation = async query => {
       `http://api.geonames.org/search?q=${encodedQuery}&maxRows=1&username=${user}&type=json`
     );
     const geoData = await queryResponse.json();
+    console.log(geoData);
 
     if (geoData.totalResultsCount > 0) {
       const { lat, lng, toponymName, countryCode } = geoData.geonames[0];
@@ -27,7 +28,8 @@ export const getCoordsAndLocation = async query => {
   } catch (err) {
     console.errr("getCoordsAndLocation:", err);
     return {
-      error: true
+      error: true,
+      isLocationFound: true
     };
   }
 };
