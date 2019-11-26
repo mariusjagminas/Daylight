@@ -9,6 +9,6 @@ export const handleInputSubmit = e => {
   showComponent(nodes.preloader);
   getTimezoneData(e.target[0].value)
     .then(timezoneData => displayTimezoneData(timezoneData))
-    .catch(err => console.log("ERROR_getTimezoneData", err));
+    .catch(err => console.log(err));
   e.target[0].value = "";
 };

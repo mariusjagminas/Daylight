@@ -7,6 +7,6 @@ export const showErrorMessage = msg => {
   hideComponent(errorMessage);
   hideComponent(infoContainer);
   hideComponent(preloader);
-  errorMessage.innrtText = msg;
+  errorMessage.innerText = msg;
   showComponent(errorMessage);
 };
