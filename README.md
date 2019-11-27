@@ -30,3 +30,43 @@ The user types in the search box a city or country name, and will get current su
 - I'll test the website manually.
 - I will use [wireframe.cc](https://wireframe.cc) to design a layout.
 - It will be deployed on [Netlify](https://www.netlify.com/)
+
+## How to run this project on the local machine?
+
+### Prerequisites
+
+You will have to have [Node.js](https://nodejs.org/en/) installed before running this project locally. Also, you have to create a free account with [GeoNames](http://www.geonames.org/login) to use their API.
+
+### Installation
+
+1. Open your terminal and clone repo:
+
+```
+git clone https://github.com/mariusjagminas/Daylight.git
+```
+
+2. Navigate into Daylight directory.
+
+```
+cd Daylight
+```
+
+3. Install NPM packages
+
+```
+npm install
+```
+
+4. Create .env file in a project's root directory.
+
+5. Add variable USER to .env file
+
+```
+USER=your_user_name_on_GeoNames
+```
+
+6. Start the development server to run the app in your browser
+
+```
+npm start
+```
