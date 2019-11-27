@@ -5,13 +5,17 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/js/index.js",
+  entry: {
+    main: "./src/js/index.js",
+    navigation: "./src/js/navigation/navigation.js"
+  },
+
   devServer: {
     contentBase: "./dist"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "[name].bundle.js"
   },
   module: {
     rules: [
@@ -45,7 +49,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "src/html/index.html"
+      template: "src/html/index.html",
+      excludeChunks: ["main"]
     })
   ]
 };
