@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     main: "./src/js/index.js",
-    navigation: "./src/js/navigation/navigation.js"
+    navigation: "./src/js/navigation.js"
   },
 
   devServer: {

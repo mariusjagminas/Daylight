@@ -1,4 +1,4 @@
-import "../../sass/styles.scss";
+import "../sass/styles.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
