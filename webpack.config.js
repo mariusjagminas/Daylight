@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -51,6 +52,7 @@ module.exports = {
       filename: "index.html",
       template: "src/html/index.html",
       excludeChunks: ["main"]
-    })
+    }),
+    new CopyPlugin([{ from: "src/assets", to: "assets" }])
   ]
 };
