@@ -1,3 +1,5 @@
+import "../../sass/styles.scss";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
