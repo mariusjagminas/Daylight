@@ -45,8 +45,8 @@
         </div>
       </nav>
     </header>
-    <!-- Section starts here -->
-    <section class="section " style="min-height: calc(100vh - 16rem);">
+    <!-- Main starts here -->
+    <main class="section " style="min-height: calc(100vh - 16rem);">
       <div class="container has-text-centered ">
         <!-- Input starts here -->
         <div class="columns is-centered is-mobile">
@@ -68,6 +68,8 @@
             </form>
           </div>
         </div>
+        <!-- Input ends here -->
+        <!-- Error message starts here -->
         <p
           style
           id="error-message"
@@ -75,23 +77,24 @@
         >
           Location not found, please try again.
         </p>
-        <!-- Input ends here -->
+        <!-- Error message ends here -->
+
         <div class="component-is-invisible" id="info-container">
           <h2
             class="title is-size-3 test"
             style="margin-top: 2rem;"
             id="location-name"
           >
-            New York City, US
+            Place Name
           </h2>
-          <p class="title is-size-5" id="current-date">22 November 2019</p>
+          <time class="title is-size-5" id="current-date">
+            Day month year
+          </time>
           <!-- Sunrise Sunset Times starts here -->
-          <!-- Main container -->
           <div class="columns is-mobile is-centered" style="margin-top: 3rem">
             <div style="width: 100%; max-width: 450px; margin: 0 40px;">
-              <!--  -->
               <div class="columns ">
-                <!-- First Card starts here -->
+                <!-- Sunrise info starts here -->
                 <div class="column">
                   <div class="card ">
                     <div
@@ -122,15 +125,15 @@
                         </p>
                       </div>
                       <div class="content">
-                        <p class="title is-2" id="sunrise-time">
-                          08:45
-                        </p>
+                        <time class="title is-2" id="sunrise-time">
+                          00:00
+                        </time>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- First Card ends here -->
-                <!-- Second Card starts here -->
+                <!-- Sunrise info ends here -->
+                <!-- Sunset info starts here -->
                 <div class="column">
                   <div class="card ">
                     <div
@@ -161,26 +164,27 @@
                         </p>
                       </div>
                       <div class="content">
-                        <p class="title is-2" id="sunset-time">
-                          20:45
-                        </p>
+                        <time class="title is-2" id="sunset-time">
+                          00:00
+                        </time>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- Second Card ends here -->
+                <!-- Sunset info ends here -->
               </div>
               <div style="margin: 3rem 0;">
-                <p class="title is-size-4" id="day-lenght">
-                  Day lenght is 12:10
-                </p>
+                <time class="title is-size-4" id="day-lenght">
+                  Day lenght is 00:00
+                </time>
               </div>
             </div>
             <!-- Sunrise Sunset Times ends here -->
           </div>
         </div>
       </div>
-    </section>
+    </main>
+    <!-- Main ends here -->
     <footer class="footer has-background-black-ter">
       <div class=" level-item content has-text-centered has-text-white">
         <p>
