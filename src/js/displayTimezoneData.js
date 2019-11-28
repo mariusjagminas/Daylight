@@ -1,5 +1,5 @@
 import moment from "moment";
-import { showComponent, hideComponent } from "./toggleComponent";
+import { showElement, hideElement } from "./toggleComponent";
 import nodes from "./nodes";
 
 const {
@@ -25,7 +25,7 @@ export const displayTimezoneData = timezoneData => {
   sunriseTime.innerText = moment(timezoneData.sunrise).format("HH:mm");
   sunsetTime.innerText = moment(timezoneData.sunset).format("HH:mm");
   dayLenght.innerText = dayLenghtStr;
-  hideComponent(preloader);
-  hideComponent(errorMessage);
-  showComponent(infoContainer);
+  hideElement(preloader);
+  hideElement(errorMessage);
+  showElement(infoContainer);
 };
