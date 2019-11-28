@@ -12,11 +12,31 @@
 
 .component-is-invisible {
   opacity: 0;
-  z-index: -1000;
+  visibility: hidden;
   transition: opacity 0.5s ease;
 }
 
 .component-is-visible {
   opacity: 1;
-  z-index: 5;
+  visibility: visible;
+}
+
+.app-about-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.app-cards-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 3em auto;
+}
+
+.app-card-image {
+  padding: 1.2rem 1.2rem 0 1.2rem;
+}
+
+.app-daylenght-wrrapper {
+  margin: 3rem 0;
 }
