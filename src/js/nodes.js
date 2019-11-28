@@ -1,5 +1,5 @@
 const nodes = {
-  preloader: document.querySelector(".preloader"),
+  preloader: document.querySelector("#preloader"),
   infoContainer: document.querySelector("#info-container"),
   locationName: document.querySelector("#location-name"),
   currentDate: document.querySelector("#current-date"),

@@ -1,4 +1,4 @@
-.preloader {
+.app-preloader {
   position: fixed;
   left: 0;
   right: 0;
@@ -8,17 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.component-is-invisible {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease;
-}
-
-.component-is-visible {
-  opacity: 1;
-  visibility: visible;
 }
 
 .app-about-container {
@@ -39,4 +28,17 @@
 
 .app-daylenght-wrrapper {
   margin: 3rem 0;
+}
+
+// Toggle element visibility
+
+.app-element-is-invisible {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.app-element-is-visible {
+  opacity: 1;
+  visibility: visible;
 }
