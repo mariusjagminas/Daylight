@@ -1,5 +1,5 @@
 import moment from "moment";
-import { showElement, hideElement } from "./toggleComponent";
+import { showElement, hideElement } from "./toggleElement";
 import nodes from "./nodes";
 
 const {
