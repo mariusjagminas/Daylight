@@ -2,7 +2,7 @@
 
 Shows current sunset and sunrise times for a selected location.
 
-[https://day-light.netlify.com/](https://day-light.netlify.com/)
+Visit [https://day-light.netlify.com/](https://day-light.netlify.com/) to view the app.
 
 ## What is your motivation for creating this project?
 
@@ -37,11 +37,11 @@ The user types in the search box a city or country name, and will get current su
 
 ### Prerequisites
 
-You will have to have [Node.js](https://nodejs.org/en/) installed before running this project locally. Also, you have to create a free account with [GeoNames](http://www.geonames.org/login) to use their API.
+You must have [Node.js](https://nodejs.org/en/) installed before running this project locally. Also, you have to sign up for [GeoNames free](http://www.geonames.org/login) account, to use their web API.
 
 ### Installation
 
-1. Open your terminal and clone repo:
+1. Open a terminal and clone the project.
 
 ```
 git clone https://github.com/mariusjagminas/Daylight.git
@@ -53,22 +53,34 @@ git clone https://github.com/mariusjagminas/Daylight.git
 cd Daylight
 ```
 
-3. Install NPM packages
+3. Install all dependencies.
 
 ```
 npm install
 ```
 
-4. Create .env file in a project's root directory.
+4. Create .env file in the project's root directory.
 
-5. Add variable USER to .env file
+5. In .env file create variable USER .Variable value must be your username at GeoNames.
 
 ```
-USER=your_user_name_on_GeoNames
+ USER=your_user_name_on_GeoNames
 ```
 
-6. Start the development server to run the app in your browser
+6. Start webpack development server
 
 ```
 npm start
 ```
+
+The browser should open automatically. If not so, then open the browser and visit [http://localhost:8080/](http://localhost:8080/) to view an application.
+
+## Production
+
+Open a terminal and run.
+
+```
+npm run build
+```
+
+You will find files in dist folder.
