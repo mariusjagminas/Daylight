@@ -1,0 +1,27 @@
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.app-animation-wrapper {
+  height: 8rem;
+  width: 17rem;
+  margin: 1.2rem auto;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 3px solid $grey-light;
+}
+
+.app-animation-wrapper-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  animation: spin 40s infinite;
+  animation-timing-function: linear;
+}

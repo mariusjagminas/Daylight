@@ -1,9 +1,7 @@
 @charset "utf-8";
-@import "./customStyles.scss";
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
 // Update default variables
-
 $family-sans-serif: "Nunito", sans-serif;
 $primary: #2f2f2f;
 $link: #f67a05;
@@ -12,3 +10,5 @@ $link-hover: rgb(187, 92, 3);
 // Import Bulma's styles
 
 @import "~bulma/bulma";
+@import "./animation.scss";
+@import "./customStyles.scss";
