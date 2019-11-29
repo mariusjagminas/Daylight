@@ -53,6 +53,11 @@ module.exports = {
       template: "src/html/index.html",
       excludeChunks: ["main"]
     }),
+    new HtmlWebpackPlugin({
+      filename: "404.html",
+      template: "src/html/404.html",
+      excludeChunks: ["main"]
+    }),
     new CopyPlugin([{ from: "src/assets", to: "assets" }])
   ]
 };
