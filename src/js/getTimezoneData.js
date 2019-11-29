@@ -18,7 +18,7 @@ export const getTimezoneData = async query => {
       const { sunrise, sunset } = await response2.json();
 
       return {
-        locationName: toponymName,
+        locationName: countryCode ? `${toponymName},` : toponymName,
         countryCode: countryCode || "",
         sunrise,
         sunset
