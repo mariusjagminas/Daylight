@@ -16,7 +16,7 @@ const {
 export const displayTimezoneData = timezoneData => {
   const dayLenghtRaw =
     moment(timezoneData.sunset) - moment(timezoneData.sunrise);
-  const dayLenghtStr = `Day lenght: ${moment(dayLenghtRaw).format(
+  const dayLenghtStr = `Day lenght ${moment(dayLenghtRaw).format(
     "HH"
   )} hours ${moment(dayLenghtRaw).format("mm")} minutes `;
 
