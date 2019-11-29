@@ -2,6 +2,12 @@
   margin-top: -36px;
 }
 
+.app-title {
+  @media (max-width: 600px) {
+    margin-top: -3rem;
+  }
+}
+
 .app-cards-container {
   width: 100%;
   max-width: 450px;
