@@ -5,7 +5,7 @@ const nodes = {
   currentDate: document.querySelector("#current-date"),
   sunriseTime: document.querySelector("#sunrise-time"),
   sunsetTime: document.querySelector("#sunset-time"),
-  dayLenght: document.querySelector("#day-lenght"),
+  dayLength: document.querySelector("#day-length"),
   input: document.querySelector("#input"),
   errorMessage: document.querySelector("#error-message")
 };
