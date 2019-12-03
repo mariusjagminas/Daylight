@@ -1,33 +1,33 @@
 import moment from "moment";
 import { showElement, hideElement } from "./toggleElement";
-import nodes from "./nodes";
+import elements from "./elements";
 import { calculateDayLength } from "./calculateDayLength/calculateDayLength";
 
 const {
   preloader,
   infoContainer,
-  locationName,
-  currentDate,
+  locationNameElement,
+  currentDateElement,
+  sunriseTimeElement,
+  sunsetTimeElement,
+  dayLengthElement,
+  errorMessageElement
+} = elements;
+
+export const displayTimezoneData = ({
   sunriseTime,
   sunsetTime,
-  dayLength,
-  errorMessage
-} = nodes;
-
-export const displayTimezoneData = timezoneData => {
-  const { hours, minutes } = calculateDayLength(
-    timezoneData.sunrise,
-    timezoneData.sunset
-  );
-
-  const dayLengthStr = `Day length ${hours} hours ${minutes} minutes `;
-
-  locationName.innerText = `${timezoneData.locationName} ${timezoneData.countryCode}`;
-  currentDate.innerText = moment().format("Do MMMM YYYY");
-  sunriseTime.innerText = moment(timezoneData.sunrise).format("HH:mm");
-  sunsetTime.innerText = moment(timezoneData.sunset).format("HH:mm");
-  dayLength.innerText = dayLengthStr;
+  locationName,
+  countryCode
+}) => {
+  const { hours, minutes } = calculateDayLength(sunriseTime, sunsetTime);
+  const dayLengthStr = `Day length ${hours} hours ${minutes} minutes`;
+  locationNameElement.innerText = `${locationName} ${countryCode}`;
+  currentDateElement.innerText = moment().format("Do MMMM YYYY");
+  sunriseTimeElement.innerText = moment(sunriseTime).format("HH:mm");
+  sunsetTimeElement.innerText = moment(sunsetTime).format("HH:mm");
+  dayLengthElement.innerText = dayLengthStr;
   hideElement(preloader);
-  hideElement(errorMessage);
+  hideElement(errorMessageElement);
   showElement(infoContainer);
 };

@@ -20,8 +20,8 @@ export const getTimezoneData = async query => {
       return {
         locationName: countryCode ? `${toponymName},` : toponymName,
         countryCode: countryCode || "",
-        sunrise,
-        sunset
+        sunriseTime: sunrise,
+        sunsetTime: sunset
       };
     } else {
       throw Error("NOT_FOUND");

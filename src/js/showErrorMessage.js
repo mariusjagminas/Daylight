@@ -1,14 +1,16 @@
 import { showElement, hideElement } from "./toggleElement";
-import nodes from "./nodes";
+import elements from "./elements";
 
-const { errorMessage, infoContainer, preloader } = nodes;
+const { errorMessageElement, infoContainer, preloader } = elements;
 const notFoundMsg = "Location not found, please try again.";
-const apiErrorMsg = "Can't fetch data from an API. Please try later";
+const apiErrorMsg =
+  "Cannot get data from GeoNames API. Open the browser console to see errors";
 
 export const showErrorMessage = msg => {
-  hideElement(errorMessage);
+  hideElement(errorMessageElement);
   hideElement(infoContainer);
   hideElement(preloader);
-  errorMessage.innerText = msg === "NOT_FOUND" ? notFoundMsg : apiErrorMsg;
-  showElement(errorMessage);
+  errorMessageElement.innerText =
+    msg === "NOT_FOUND" ? notFoundMsg : apiErrorMsg;
+  showElement(errorMessageElement);
 };
