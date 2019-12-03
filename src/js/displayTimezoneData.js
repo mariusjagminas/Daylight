@@ -1,6 +1,7 @@
 import moment from "moment";
 import { showElement, hideElement } from "./toggleElement";
 import nodes from "./nodes";
+import { calculateDayLength } from "./calculateDayLength/calculateDayLength";
 
 const {
   preloader,
@@ -14,11 +15,12 @@ const {
 } = nodes;
 
 export const displayTimezoneData = timezoneData => {
-  const dayLengthRaw =
-    moment(timezoneData.sunset) - moment(timezoneData.sunrise);
-  const dayLengthStr = `Day length ${moment(dayLengthRaw).format(
-    "HH"
-  )} hours ${moment(dayLengthRaw).format("mm")} minutes `;
+  const { hours, minutes } = calculateDayLength(
+    timezoneData.sunrise,
+    timezoneData.sunset
+  );
+
+  const dayLengthStr = `Day length ${hours} hours ${minutes} minutes `;
 
   locationName.innerText = `${timezoneData.locationName} ${timezoneData.countryCode}`;
   currentDate.innerText = moment().format("Do MMMM YYYY");
