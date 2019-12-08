@@ -1,32 +1,38 @@
-import { showErrorMessage } from "./showErrorMessage";
+const baseUrl = "https://secure.geonames.org/";
+
+const getGeoData = async query => {
+  const encodedQuery = encodeURI(query);
+
+  const response = await fetch(
+    `${baseUrl}search?q=${encodedQuery}&maxRows=1&username=${process.env.USER}&type=json`
+  );
+
+  return await response.json();
+};
+
+export const getSunriseSunsetTimes = async (lat, lng) => {
+  const response = await fetch(
+    `${baseUrl}timezoneJSON?lat=${lat}&lng=${lng}&username=${process.env.USER}`
+  );
+
+  return await response.json();
+};
 
 export const getTimezoneData = async query => {
-  const encodedQuery = encodeURI(query);
-  const baseUrl = "https://secure.geonames.org/";
-
   try {
-    const response = await fetch(
-      `${baseUrl}search?q=${encodedQuery}&maxRows=1&username=${process.env.USER}&type=json`
-    );
-    const geoData = await response.json();
+    const geoData = await getGeoData(query);
+    if (geoData.totalResultsCount === 0) return { status: "NOT_FOUND" };
+    const { lat, lng, toponymName, countryCode } = geoData.geonames[0];
+    const { sunrise, sunset } = await getSunriseSunsetTimes(lat, lng);
 
-    if (geoData.totalResultsCount > 0) {
-      const { lat, lng, toponymName, countryCode } = geoData.geonames[0];
-      const response2 = await fetch(
-        `${baseUrl}timezoneJSON?lat=${lat}&lng=${lng}&username=${process.env.USER}`
-      );
-      const { sunrise, sunset } = await response2.json();
-
-      return {
-        locationName: countryCode ? `${toponymName},` : toponymName,
-        countryCode: countryCode || "",
-        sunriseTime: sunrise,
-        sunsetTime: sunset
-      };
-    } else {
-      throw Error("NOT_FOUND");
-    }
-  } catch (err) {
-    showErrorMessage(err.message);
+    return {
+      status: "OK",
+      locationName: countryCode ? `${toponymName},` : toponymName,
+      countryCode: countryCode || "",
+      sunriseTime: sunrise,
+      sunsetTime: sunset
+    };
+  } catch {
+    return { status: "ERROR" };
   }
 };

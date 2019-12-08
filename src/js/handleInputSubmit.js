@@ -3,12 +3,12 @@ import { displayTimezoneData } from "./displayTimezoneData";
 import { showElement, hideElement } from "./toggleElement";
 import elements from "./elements";
 
-export const handleInputSubmit = e => {
+export const handleInputSubmit = async e => {
   e.preventDefault();
   hideElement(elements.infoContainer);
   showElement(elements.preloader);
-  getTimezoneData(e.target[0].value)
-    .then(timezoneData => displayTimezoneData(timezoneData))
-    .catch(err => console.log(err));
+  const timezoneData = await getTimezoneData(e.target[0].value);
   e.target[0].value = "";
+  displayTimezoneData(timezoneData);
+  return;
 };

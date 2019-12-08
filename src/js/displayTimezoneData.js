@@ -1,7 +1,8 @@
 import moment from "moment";
 import { showElement, hideElement } from "./toggleElement";
 import elements from "./elements";
-import { calculateDayLength } from "./calculateDayLength/calculateDayLength";
+import { calculateDayLength } from "./calculateDayLength";
+import { showErrorMessage } from "./showErrorMessage";
 
 const {
   preloader,
@@ -14,12 +15,20 @@ const {
   errorMessageElement
 } = elements;
 
-export const displayTimezoneData = ({
-  sunriseTime,
-  sunsetTime,
-  locationName,
-  countryCode
-}) => {
+const notFoundMsg = "Location not found, please try again.";
+const apiErrorMsg =
+  "Cannot get data from GeoNames API. Open the browser console to see errors";
+
+export const displayTimezoneData = timezoneData => {
+  if (timezoneData.status === "NOT_FOUND") {
+    showErrorMessage(notFoundMsg);
+    return;
+  }
+  if (timezoneData.status === "ERROR") {
+    showErrorMessage(apiErrorMsg);
+    return;
+  }
+  const { locationName, countryCode, sunriseTime, sunsetTime } = timezoneData;
   const { hours, minutes } = calculateDayLength(sunriseTime, sunsetTime);
   const dayLengthStr = `Day length ${hours} hours ${minutes} minutes`;
   locationNameElement.innerText = `${locationName} ${countryCode}`;
