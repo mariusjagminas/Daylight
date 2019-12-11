@@ -4,7 +4,6 @@ import elements from "./elements";
 const { errorMessageElement, infoContainer, preloader } = elements;
 
 export const showErrorMessage = message => {
-  hideElement(errorMessageElement);
   hideElement(infoContainer);
   hideElement(preloader);
   errorMessageElement.innerText = message;
