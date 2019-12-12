@@ -1,21 +1,23 @@
 import { showElement, hideElement } from "../src/js/toggleElement";
+import elements from "../src/js/elements";
+
+jest.mock("../src/js/elements");
+const { preloader } = elements;
 
 describe("toggleElement module", () => {
   test("should add a class to the element", () => {
-    const element = document.createElement("div");
+    expect(preloader.classList).not.toContain("app-element-is-visible");
 
-    showElement(element);
+    showElement(preloader);
 
-    expect(element.classList).toContain("app-element-is-visible");
+    expect(preloader.classList).toContain("app-element-is-visible");
   });
 
   test("should remove a class from the element", () => {
-    const element = document.createElement("div");
-    element.classList.add("app-element-is-visible");
-    expect(element.classList).toContain("app-element-is-visible");
+    expect(preloader.classList).toContain("app-element-is-visible");
 
-    hideElement(element);
+    hideElement(preloader);
 
-    expect(element.classList).not.toContain("app-element-is-visible");
+    expect(preloader.classList).not.toContain("app-element-is-visible");
   });
 });

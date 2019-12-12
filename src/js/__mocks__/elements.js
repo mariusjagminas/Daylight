@@ -1,17 +1,18 @@
-const elements = {
-  preloader: document.createElement("div"),
-  infoContainer: document.createElement("div"),
-  locationNameElement: document.createElement("div"),
-  currentDateElement: document.createElement("div"),
-  sunriseTimeElement: document.createElement("div"),
-  sunsetTimeElement: document.createElement("div"),
-  dayLengthElement: document.createElement("div"),
-  inputField: document.createElement("div"),
-  errorMessageElement: document.createElement("div")
-};
+const elementsArray = [
+  "preloader",
+  "infoContainer",
+  "locationNameElement",
+  "currentDateElement",
+  "sunriseTimeElement",
+  "sunsetTimeElement",
+  "dayLengthElement",
+  "inputField",
+  "errorMessageElement"
+];
+const elements = {};
 
-for (let key in elements) {
-  elements[key].setAttribute("data-element", key);
-}
+elementsArray.map(elementName => {
+  elements[elementName] = document.createElement("div");
+});
 
 export default elements;

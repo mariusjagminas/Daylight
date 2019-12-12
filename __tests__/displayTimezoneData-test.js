@@ -8,20 +8,30 @@ jest.mock("../src/js/elements");
 jest.mock("../src/js/showErrorMessage");
 jest.mock("../src/js/toggleElement");
 
+const {
+  locationNameElement,
+  currentDateElement,
+  sunriseTimeElement,
+  sunsetTimeElement,
+  dayLengthElement,
+  preloader,
+  errorMessageElement,
+  infoContainer
+} = elements;
+
 describe("displayTimezoneData function", () => {
   test("should show the first error message", () => {
     displayTimezoneData({ status: "NOT_FOUND" });
 
-    expect(showErrorMessage.mock.results[0].value).toBe(
+    expect(showErrorMessage).toHaveBeenCalledWith(
       "Location not found, please try again."
     );
-    showErrorMessage.mockClear();
   });
 
   test("should show the second error message", () => {
     displayTimezoneData({ status: "ERROR" });
 
-    expect(showErrorMessage.mock.results[0].value).toBe(
+    expect(showErrorMessage).toHaveBeenCalledWith(
       "Cannot get data from GeoNames API. Open the browser console to see errors"
     );
   });
@@ -35,18 +45,14 @@ describe("displayTimezoneData function", () => {
       sunsetTime: "2019-12-03 16:35"
     });
     // check if data is set correctly
-    expect(elements.locationNameElement.innerText).toBe("kaunas, LT");
-    expect(elements.currentDateElement.innerText).toBe(
-      moment().format("Do MMMM YYYY")
-    );
-    expect(elements.sunriseTimeElement.innerText).toBe("07:03");
-    expect(elements.sunsetTimeElement.innerText).toBe("16:35");
-    expect(elements.dayLengthElement.innerText).toBe(
-      "Day length 9 hours 32 minutes"
-    );
+    expect(locationNameElement.innerText).toBe("kaunas, LT");
+    expect(currentDateElement.innerText).toBe(moment().format("Do MMMM YYYY"));
+    expect(sunriseTimeElement.innerText).toBe("07:03");
+    expect(sunsetTimeElement.innerText).toBe("16:35");
+    expect(dayLengthElement.innerText).toBe("Day length 9 hours 32 minutes");
     // Check if hideElement & showElement is called on correct elements
-    expect(hideElement).toHaveReturnedWith(elements.preloader);
-    expect(hideElement).toHaveReturnedWith(elements.errorMessageElement);
-    expect(showElement).toHaveReturnedWith(elements.infoContainer);
+    expect(hideElement).toHaveBeenCalledWith(preloader);
+    expect(hideElement).toHaveBeenCalledWith(errorMessageElement);
+    expect(showElement).toHaveBeenCalledWith(infoContainer);
   });
 });

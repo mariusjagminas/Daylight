@@ -9,18 +9,9 @@ describe("showErrorMessage function", () => {
   test("should call hideElement, showElement, and set inner text correctly", () => {
     showErrorMessage("test message");
 
-    expect(hideElement.mock.calls[0][0].getAttribute("data-element")).toBe(
-      "infoContainer"
-    );
-
-    expect(hideElement.mock.calls[1][0].getAttribute("data-element")).toBe(
-      "preloader"
-    );
-
     expect(elements.errorMessageElement.innerText).toBe("test message");
-
-    expect(showElement.mock.calls[0][0].getAttribute("data-element")).toBe(
-      "errorMessageElement"
-    );
+    expect(hideElement).toHaveBeenCalledWith(elements.infoContainer);
+    expect(hideElement).toHaveBeenCalledWith(elements.preloader);
+    expect(showElement).toHaveBeenCalledWith(elements.errorMessageElement);
   });
 });
