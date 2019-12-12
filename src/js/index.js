@@ -1,4 +1,4 @@
-import { handleInputSubmit } from "./handleInputSubmit";
+import { handleFormSubmit } from "./handleFormSubmit";
 import elements from "./elements";
 
-elements.inputField.addEventListener("submit", handleInputSubmit);
+elements.inputField.addEventListener("submit", handleFormSubmit);

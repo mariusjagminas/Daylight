@@ -3,7 +3,7 @@ import { displayTimezoneData } from "./displayTimezoneData";
 import { showElement, hideElement } from "./toggleElement";
 import elements from "./elements";
 
-export const handleInputSubmit = async e => {
+export const handleFormSubmit = async e => {
   e.preventDefault();
   hideElement(elements.infoContainer);
   showElement(elements.preloader);
