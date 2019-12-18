@@ -29,7 +29,7 @@ The user types in the search box a city or country name, and will get current su
 ## What will be your process?
 
 - I will submit commit when a feature is added, or a task is accomplished.
-- I'll test the website manually.
+- I'll test the website manually, and I'll use Jest framework to write a unit tests.
 - I will use [wireframe.cc](https://wireframe.cc) to design a layout.
 - It will be deployed on [Netlify](https://www.netlify.com/)
 
@@ -84,3 +84,19 @@ npm run build
 ```
 
 You will find files in dist folder.
+
+## Testing
+
+This app uses Jest for a unit testing. To run tests, open a terminal and type:
+
+```
+npm test
+```
+
+or
+
+```
+npm run watch
+```
+
+to run tests in a watch mode.
