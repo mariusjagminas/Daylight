@@ -1,4 +1,6 @@
 const elements = {
+	navbarBurgerElement: document.querySelector('.navbar-burger'),
+	navbarMenuElement: document.querySelector('.navbar-menu'),
 	preloader: document.querySelector('#preloader'),
 	infoContainer: document.querySelector('#info-container'),
 	locationNameElement: document.querySelector('#location-name'),
