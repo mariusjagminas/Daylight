@@ -100,3 +100,8 @@ npm run watch
 ```
 
 to run tests in a watch mode.
+
+## Acknowledgements
+
+Thanks [klemenjarc](https://github.com/klemenjarc) for the feature suggestion. The feature has been implemented in the project. In addition, I created a basic API endpoint for anyone who wants to use it:
+[same-length-of-the-day-api](https://github.com/mariusjagminas/same-length-of-the-day-api)
