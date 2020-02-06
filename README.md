@@ -1,21 +1,21 @@
 # Daylight
 
-Shows current sunset and sunrise times for a selected location.
+Shows the current sunset and sunrise times for the selected location.
 
 Visit [https://day-light.netlify.com/](https://day-light.netlify.com/) to view the app.
 
 ## What is your motivation for creating this project?
 
-The changing length of days and nights depends on the location and time of year. It would be nice to know how many hours of daylight we have in a specific location.
+The changing length of days and nights depends on the location and season of the year. It would be nice to know how many hours of daylight we have at a certain location.
 
 ## How will users interact with your web site?
 
-The user types in the search box a city or country name, and will get current sunset and sunrise times for that location.
+The user enters the city or country name in the search field and receives the current sunset and sunrise times for that location
 
 ## What 3rd Party API(s) will you integrate with?
 
 - [GeoNames](http://www.geonames.org/export/web-services.html)
-  - To discover the longitude & latitude for the location
+  - To discover the latitude and longitude of the location
   - To get a sunrise & sunset times from long/lat.
 
 ## Tech Stack
@@ -61,7 +61,7 @@ npm install
 
 4. Create .env file in the project's root directory.
 
-5. In .env file create variable USER .Variable value must be your username at GeoNames.
+5. Create the USER variable in the .env file. The variable value must be your GeoNames username.
 
 ```
  USER=your_user_name_on_GeoNames
@@ -73,7 +73,7 @@ npm install
 npm start
 ```
 
-The browser should open automatically. If not so, then open the browser and visit [http://localhost:8080/](http://localhost:8080/) to view an application.
+The browser should open automatically. If not, open your browser and visit [http://localhost:8080/](http://localhost:8080/) to view the application.
 
 ## Production
 
@@ -83,7 +83,7 @@ Open a terminal and run.
 npm run build
 ```
 
-You will find files in dist folder.
+You will find the files in the dist. folder
 
 ## Testing
 
@@ -103,5 +103,6 @@ to run tests in a watch mode.
 
 ## Acknowledgements
 
-Thanks [klemenjarc](https://github.com/klemenjarc) for the feature suggestion. The feature has been implemented in the project. In addition, I created a basic API endpoint for anyone who wants to use it:
+Thanks to [klemenjarc](https://github.com/klemenjarc) for the feature suggestion. The feature has been implemented in the project. In addition, I've created a basic API endpoint for anyone who wants to use it:
 [same-length-of-the-day-api](https://github.com/mariusjagminas/same-length-of-the-day-api)
+
